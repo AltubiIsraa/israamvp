@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<x-header-layout>
-<!-- <x-slot name="header">
-<h2 class="font-semibold text-xl text-gray-800 leading-tight">
-	{{ __('Dashboard') }}
-</h2>
 
-</x-slot> -->
+<x-header-layout>
+
 </x-header-layout>
+<x-app-layout>
+    <x-slot name="header" >
+        </x-slot>
+</x-app-layout>
 
 <head>
 	<meta charset="UTF-8">
