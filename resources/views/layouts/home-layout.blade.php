@@ -54,10 +54,11 @@
 			</a>
 			
 			<div class="flex w-1/2 justify-end content-center">		
-			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#"> 
-				 Login
+			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="http://localhost/login"> 
+				 Login&nbsp&nbsp&nbsp
 			</a>
-			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#"> 
+			
+			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="http://localhost/register"> 
 				 Registeration
 			</a>
 			</div>
@@ -66,6 +67,7 @@
 
 	</div>
 
+	
 	<!--Main-->
 	<div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 		
