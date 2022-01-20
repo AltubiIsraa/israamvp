@@ -7,21 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Profile;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
+
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -48,11 +42,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public static function bgoted(){
+    public static function booted(){
 
         static::created(function ($user){
 
-            $profile = Profile::create(['user_id' => $user->is]);
+            $profile = Profile::create(['user_id' => $user->id]);
         });
     }
 }

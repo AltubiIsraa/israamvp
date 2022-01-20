@@ -7,19 +7,19 @@
 			</a>
 			
 			<div class="flex w-1/2 justify-end content-center">		
-			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/profile') }}"> 
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/dashboard/profile') }}"> 
 				 Profile&nbsp&nbsp&nbsp
 			</a>
 			
-			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/profile') }}"> 
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/dashboard/profile') }}"> 
 				 Teachers Emails&nbsp&nbsp&nbsp
 			</a>
 
-			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/subject') }}"> 
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/dashboard/subject') }}"> 
 				 Contect us&nbsp&nbsp&nbsp
 			</a>
 
-			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/subject') }}"> 
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/dashboard/subject') }}"> 
 				 subjects
 			</a>
 			</div>

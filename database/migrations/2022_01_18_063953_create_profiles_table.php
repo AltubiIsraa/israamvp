@@ -18,6 +18,8 @@ class CreateProfilesTable extends Migration
             $table->foreignId('user_id');
             $table->string('phone')->nullable();
             $table->string('schoone')->nullable();
+
+            
             $table->timestamps();
         });
     }

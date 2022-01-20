@@ -22,7 +22,6 @@ Route::get('/',App\Http\Controllers\WelcomeController::class);
 Route::get('/dashboard/subject',App\Http\Controllers\SabjectController::class);
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class);
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
