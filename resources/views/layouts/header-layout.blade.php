@@ -7,11 +7,19 @@
 			</a>
 			
 			<div class="flex w-1/2 justify-end content-center">		
-			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="http://localhost/login"> 
-				 schools&nbsp&nbsp&nbsp
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/profile') }}"> 
+				 Profile&nbsp&nbsp&nbsp
 			</a>
 			
-			<a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="http://localhost/register"> 
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/profile') }}"> 
+				 Teachers Emails&nbsp&nbsp&nbsp
+			</a>
+
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/subject') }}"> 
+				 Contect us&nbsp&nbsp&nbsp
+			</a>
+
+			<a class="flex items-center text-indigo-500 no-underline hover:no-underline font-bold text-2xl lg:text-2xl"  href="{{ url('/subject') }}"> 
 				 subjects
 			</a>
 			</div>
