@@ -2,6 +2,8 @@
 
 return [
 
+    'harbourspace_site_domain' => env('APP_HS_URL', 'http://harbourspace.site'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
