@@ -22,7 +22,7 @@ use App\Http\Controllers\DocController;
 //activites
 Route::get('/',App\Http\Controllers\WelcomeController::class);
 Route::get('/dashboard/doccreate',[\App\Http\Controllers\DocController::class, 'create']);
-Route::resource('/docs/store' , [\App\Http\Controllers\DocController::class,'index']);
+Route::get('/docs/store' , [\App\Http\Controllers\DocController::class,'index']);
 //Route::get('/dashboard/store',[\App\Http\Controllers\SubjectsController::class,'index']);
 
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class);
