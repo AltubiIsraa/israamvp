@@ -4,7 +4,7 @@
 <body>
 <h1>upload your document</h1>
 <p>Choose subject:</p>
-<form action="/action_page.php">
+<form action="/action_page.php" name="subject">
   <input type="radio" id="html" name="fav_language" value="HTML">
   <label for="html">Arabic Language</label><br>
   <input type="radio" id="css" name="fav_language" value="CSS">
@@ -18,7 +18,7 @@
   <input type="radio" id="javascript" name="fav_language" value="JavaScript">
   <label for="javascript">Mathematics</label><br>
 </form> </br>
-<form action="/action_page.php">
+<form action="/action_page.php" name="level">
   <label for="cars">Choose a Grade:</label></br>
   <select id="cars" name="cars">
     <option value="volvo">five</option>
@@ -33,18 +33,20 @@
 </select>
 </form></br>
 <form action="/action_page.php">
-  <label for="username">title:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="username">Description:</label><br>
-  <textarea rows="4" cols="50" name="comment" form="usrform">
+  <label for="title">title:</label><br>
+  <input type="text" id="title" name="title"><br>
+  <label for="title">Description:</label><br>
+  <textarea rows="4" cols="50" name="desc" form="usrform">
 Enter text here...</textarea></br>
 <!-- </form></br>
 <form action="/action_page.php">
   <label for="myfile">Select files:</label></br>
   <input type="file" id="myfile" name="myfile" multiple><br><br>
 </form> -->
-<input type="submit" value="Submit">
 
+<a href="{{ url('/dashboard/subject') }}">
+  <input type="submit" value="Submit">
+</a>
 
 
 </body>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSabjectsTable extends Migration
+class CreateSubsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateSabjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sabjects', function (Blueprint $table) {
+        Schema::create('subs', function (Blueprint $table) {
             $table->id();
+            $table->string('subject')->nullable();
+            $table->string('grade')->nullable();
+            $table->string('title')->nullable();
+            $table->string('Desc')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateSabjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sabjects');
+        Schema::dropIfExists('subs');
     }
 }
