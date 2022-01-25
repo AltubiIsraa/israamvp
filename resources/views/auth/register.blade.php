@@ -21,6 +21,16 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <!-- User Type -->
+            <div>
+                <x-label for="user_type" :value="__('Register as:')" />
+
+                <select id="gender" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="gender" :value="old('gender')" required autofocus>
+                    <option value="author">male</option>
+                    <option value="reader">female</option>
+                <select>
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

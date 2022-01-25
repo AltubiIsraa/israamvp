@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sub;
+use App\Models\Doc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 
-class SubController extends Controller
+
+class DocController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,10 @@ class SubController extends Controller
      */
     public function index()
     {
-        return view('Doc.sub');
+
+        $docs = Doc::All();
+
+        return view('Doc.index');
     }
 
     /**
@@ -24,8 +30,7 @@ class SubController extends Controller
      */
     public function create()
     {
-        return view('Doc.sub');
-
+        return view('Doc.create');
     }
 
     /**
@@ -36,25 +41,24 @@ class SubController extends Controller
      */
     public function store(Request $request)
     {
-        $sub = new Sub();
+        $doc = new Doc();
+        $doc->user_id-Auth::id();
+        $doc->subject=$request->input('subject');
+        $doc->grade=$request->input('grade');
+        $doc->title=$request->input('title');
+        $doc->Desc=$request->input('Desc');
+        $doc->save();
 
-        $sub->title = $request->input('subject');
-        $sub->auther_id = $request->input('level');
-        $sub->no_of_pages = $request->input('title');
-        $desc = $request->input('desc', []); 
-        // $sub->user_id=Auth::id();
-        $sub->save();
-
-        return redirect()->route('Doc.subject');
+        return view('Doc.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sub  $sub
+     * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function show(Sub $sub)
+    public function show(Doc $doc)
     {
         //
     }
@@ -62,10 +66,10 @@ class SubController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sub  $sub
+     * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sub $sub)
+    public function edit(Doc $doc)
     {
         //
     }
@@ -74,10 +78,10 @@ class SubController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sub  $sub
+     * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sub $sub)
+    public function update(Request $request, Doc $doc)
     {
         //
     }
@@ -85,10 +89,10 @@ class SubController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sub  $sub
+     * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sub $sub)
+    public function destroy(Doc $doc)
     {
         //
     }

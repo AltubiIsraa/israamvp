@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivitiesController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\DocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +21,9 @@ use Illuminate\Http\Request;
 // });
 //activites
 Route::get('/',App\Http\Controllers\WelcomeController::class);
-Route::get('/dashboard/sub',[\App\Http\Controllers\SubController::class,'index']);
-Route::get('/books/add' , [\App\Http\Controllers\SubController::class,'create']);
-Route::post('/books/store' , [\App\Http\Controllers\SubController::class,'store']);
-
-
-
-Route::get('/dashboard/subject',[\App\Http\Controllers\SubjectsController::class,'index']);
+Route::get('/dashboard/doccreate',[\App\Http\Controllers\DocController::class, 'create']);
+Route::resource('/docs/store' , [\App\Http\Controllers\DocController::class,'index']);
+//Route::get('/dashboard/store',[\App\Http\Controllers\SubjectsController::class,'index']);
 
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class);
 

@@ -1,52 +1,63 @@
 
-<!DOCTYPE html>
-<html>    
-<body>
-<h1>upload your document</h1>
-<p>Choose subject:</p>
-<form action="/action_page.php">
-  <input type="radio" id="html" name="fav_language" value="HTML">
-  <label for="html">Arabic Language</label><br>
-  <input type="radio" id="css" name="fav_language" value="CSS">
-  <label for="css">Islamic Education</label><br>
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-  <label for="javascript">History</label><br>
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-  <label for="javascript">English Language</label><br>
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-  <label for="javascript">Science</label><br>
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-  <label for="javascript">Mathematics</label><br>
-</form> </br>
-<form action="/action_page.php">
-  <label for="cars">Choose a Grade:</label></br>
-  <select id="cars" name="cars">
-    <option value="volvo">five</option>
-    <option value="saab">six</option>
-    <option value="fiat">seven</option>
-    <option value="audi">eight</option>
-    <option value="audi">nine</option>
-    <option value="audi">ten</option>
-    <option value="audi">eleven</option>
-    <option value="audi">twelve</option>
+<x-guest-layout>
+    <x-auth-card>
+        <x-slot name="logo">
+            <a href="/">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            </a>
+        </x-slot>
 
-</select>
-</form></br>
-<form action="/action_page.php">
-  <label for="username">title:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="username">Description:</label><br>
-  <textarea rows="4" cols="50" name="comment" form="usrform">
-Enter text here...</textarea></br>
-<!-- </form></br>
-<form action="/action_page.php">
-  <label for="myfile">Select files:</label></br>
-  <input type="file" id="myfile" name="myfile" multiple><br><br>
-</form> -->
-<input type="submit" value="Submit">
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+        <form method="POST" action="{{ route('register') }}">
+        <form action="/dashboard/add" method="POST">
 
+        @honeypot
+            @csrf
 
-</body>
-</html>
+            <!-- Name -->
+            <div>
+                <x-label for="name" :value="__('Name')" />
 
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-label for="email" :value="__('Email')" />
+
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+
+                <x-button class="ml-4">
+                    {{ __('Register') }}
+                </x-button>
+            </div>
+        </form>
+    </x-auth-card>
+</x-guest-layout>
