@@ -1,6 +1,6 @@
 
 
-<form action="/docs/store" method="POST"></br>
+<form action="/dashboard/store" method="POST"></br>
 @csrf
 <h1>upload your document</h1></br>
 <div>
@@ -8,13 +8,13 @@
     <select id="subject" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="subject" :value="old('subject')" required autofocus>
       <option value="English">English</option>
       <option value="Arabic">Arabic</option>
-      <option value="English">Isalmic Education</option>
-      <option value="Arabic">History</option>
-      <option value="English">Science</option>
-      <option value="Arabic">Art</option>
-      <option value="English">Sport</option>
-      <option value="Arabic">Science</option>
-      <option value="Arabic">Mathematics</option>
+      <option value="Isalmic Education">Isalmic Education</option>
+      <option value="History">History</option>
+      <option value="Science">Science</option>
+      <option value="Art">Art</option>
+      <option value="Sport">Sport</option>
+      <option value="Science">Science</option>
+      <option value="Mathematics">Mathematics</option>
       <select></br></br>
 </div>
 <div>
@@ -23,12 +23,12 @@
     <select id="grade" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="grade" :value="old('grade')" required autofocus>
       <option value="five">five</option>
       <option value="six">six</option>
-      <option value="five">seven</option>
-      <option value="six">eight</option>
-      <option value="five">nine</option>
-      <option value="six">ten</option>
-      <option value="five">eleven</option>
-      <option value="six">twelve</option>
+      <option value="seven">seven</option>
+      <option value="eight">eight</option>
+      <option value="nine">nine</option>
+      <option value="ten">ten</option>
+      <option value="eleven">eleven</option>
+      <option value="twelve">twelve</option>
     <select>
 </div>
 

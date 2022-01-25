@@ -19,13 +19,16 @@ use App\Http\Controllers\DocController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-//activites
 Route::get('/',App\Http\Controllers\WelcomeController::class);
+
+//DocController
 Route::get('/dashboard/doccreate',[\App\Http\Controllers\DocController::class, 'create']);
-Route::get('/docs/store' , [\App\Http\Controllers\DocController::class,'index']);
-//Route::get('/dashboard/store',[\App\Http\Controllers\SubjectsController::class,'index']);
+Route::post('/dashboard/store',[\App\Http\Controllers\DocController::class, 'store']);
+Route::get('/dashboard/index' , [\App\Http\Controllers\DocController::class,'index'])->name('Doc.index');
+
 
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

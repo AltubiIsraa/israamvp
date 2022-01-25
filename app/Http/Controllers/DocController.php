@@ -18,9 +18,8 @@ class DocController extends Controller
     public function index()
     {
 
-        $docs = Doc::All();
-
-        return view('Doc.index');
+        $docs = Doc::get();              
+        return view('Doc.index', compact('docs'));
     }
 
     /**
@@ -48,8 +47,7 @@ class DocController extends Controller
         $doc->title=$request->input('title');
         $doc->Desc=$request->input('Desc');
         $doc->save();
-
-        return view('Doc.index');
+        return redirect()->route('Doc.index');
     }
 
     /**
