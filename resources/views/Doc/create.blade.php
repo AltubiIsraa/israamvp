@@ -36,7 +36,7 @@
   <input type="text" id="title" name="title"><br>
   <label for="title">Description:</label><br>
   <textarea rows="4" cols="50" name="Desc"></textarea></br>
-
+  <div class="form-group">
 <input type="submit" value="Submit">
 
 </form>

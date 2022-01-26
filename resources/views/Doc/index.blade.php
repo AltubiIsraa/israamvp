@@ -27,7 +27,14 @@
         <td>{{$doc->Desc}}</td>
         <td>{{$doc->subject}}</td>
         <td>{{$doc->grade}}</td>
+        <td>
+        <a href="/doc/delete/{{$doc->id}}">delete</a></br>
+        <a href="/doc/show/{{$doc->id}}"><button type="submit" >show</button></a>
+        <br>
+        <a href="/doc/edit/{{$doc->id}}"><button type="submit" >edit</button></a>
+      </td>
     </tr>
+
     @endforeach
 </table>
 </div>

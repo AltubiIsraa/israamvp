@@ -6,6 +6,7 @@ use App\Models\Doc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
+use App\Providers\ValidatedData;
 
 
 class DocController extends Controller
@@ -40,13 +41,15 @@ class DocController extends Controller
      */
     public function store(Request $request)
     {
+
         $doc = new Doc();
-        $doc->user_id-Auth::id();
+        $doc->user_id=Auth::id();
         $doc->subject=$request->input('subject');
         $doc->grade=$request->input('grade');
         $doc->title=$request->input('title');
         $doc->Desc=$request->input('Desc');
         $doc->save();
+
         return redirect()->route('Doc.index');
     }
 
@@ -56,9 +59,11 @@ class DocController extends Controller
      * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function show(Doc $doc)
+    public function show(Doc $doc, $id)
     {
-        //
+        $doc = Doc::find($id);
+        
+        return view('Doc.show', ["doc" => $doc]);
     }
 
     /**
@@ -67,9 +72,10 @@ class DocController extends Controller
      * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doc $doc)
+    public function edit(Doc $doc, $id)
     {
-        //
+        $doc = Doc::find($id);
+        return view('Doc.edit', ["doc"=>$doc]);
     }
 
     /**
@@ -79,9 +85,24 @@ class DocController extends Controller
      * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Doc $doc)
+    public function update(Request $request, Doc $doc, $id)
+    {     
+        $doc = Doc::find($id);
+        $doc->user_id=Auth::id();
+        $doc->subject=$request->input('subject');
+        $doc->grade=$request->input('grade');
+        $doc->title=$request->input('title');
+        $doc->Desc=$request->input('Desc');
+        $doc->save();
+        $doc->update();
+        return redirect()->route('Doc.index');
+    }
+
+
+    public function delete(Request $request, $id)
     {
-        //
+        $doc = Doc::find($id);
+        return view('Doc.delete', ["doc"=>$doc]);    
     }
 
     /**
@@ -90,8 +111,9 @@ class DocController extends Controller
      * @param  \App\Models\Doc  $doc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Doc $doc)
+    public function destroy(Doc $doc, $id)
     {
-        //
+        $doc = Doc::find($id);
+        $doc->delete();
     }
 }

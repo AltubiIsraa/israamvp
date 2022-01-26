@@ -50,9 +50,9 @@ class User extends Authenticatable
         });
     }
 
-    public function doc(){
+    public function docs(){
 
 
-        return $this->hasOne(Doc::class);
+        return $this->hasMany(Doc::class);
     }
 }

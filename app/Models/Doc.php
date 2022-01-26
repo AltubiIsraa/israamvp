@@ -10,7 +10,7 @@ class Doc extends Model
     
     protected $Doc = [];
     use HasFactory;
-    public function user(){
+    public function users(){
 
 
         return $this->belongsTo(User::class);
