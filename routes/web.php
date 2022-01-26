@@ -22,14 +22,14 @@ Route::get('/',App\Http\Controllers\WelcomeController::class);
 
 //DocController
 
-Route::get('/dashboard/doccreate',[\App\Http\Controllers\DocController::class, 'create']);
-Route::post('/dashboard/store',[\App\Http\Controllers\DocController::class, 'store']);
-Route::get('/dashboard/index' , [\App\Http\Controllers\DocController::class,'index'])->name('Doc.index');
-Route::get('/doc/show/{id}' , [\App\Http\Controllers\DocController::class,'show'])->name('Doc.show');
-Route::get('/doc/delete/{id}', [\App\Http\Controllers\DocController::class,'delete'])->name('Doc.delete');
-Route::post('/doc/destroy/{id}', [\App\Http\Controllers\DocController::class,'destroy'])->name('Doc.destroy');
-Route::get('/doc/edit/{id}', [\App\Http\Controllers\DocController::class,'edit'])->name('Doc.edit');
-Route::post('/doc/update/{id}', [\App\Http\Controllers\DocController::class,'update'])->name('Doc.update');
+Route::get('/dashboard/doccreate',[\App\Http\Controllers\DocController::class, 'create'])->Middleware('auth');
+Route::post('/dashboard/store',[\App\Http\Controllers\DocController::class, 'store'])->Middleware('auth');
+Route::get('/dashboard/index' , [\App\Http\Controllers\DocController::class,'index'])->name('Doc.index')->Middleware('auth');
+Route::get('/doc/show/{id}' , [\App\Http\Controllers\DocController::class,'show'])->name('Doc.show')->Middleware('auth');
+Route::get('/doc/delete/{id}', [\App\Http\Controllers\DocController::class,'delete'])->name('Doc.delete')->Middleware('auth');
+Route::post('/doc/destroy/{id}', [\App\Http\Controllers\DocController::class,'destroy'])->name('Doc.destroy')->Middleware('auth');
+Route::get('/doc/edit/{id}', [\App\Http\Controllers\DocController::class,'edit'])->name('Doc.edit')->Middleware('auth');
+Route::post('/doc/update/{id}', [\App\Http\Controllers\DocController::class,'update'])->name('Doc.update')->Middleware('auth');
 
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class)->name('profile');
 

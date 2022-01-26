@@ -10,8 +10,6 @@ class ProfileController extends Controller
     public function __invoke(Request $request)
     {
       $users = User::all();              
-
-      return view('profile');
-
+      return view('profile', compact('users'));
     }
 }

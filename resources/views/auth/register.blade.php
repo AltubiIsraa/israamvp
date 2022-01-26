@@ -26,8 +26,8 @@
                 <x-label for="user_type" :value="__('Register as:')" />
 
                 <select id="gender" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="gender" :value="old('gender')" required autofocus>
-                    <option value="author">male</option>
-                    <option value="reader">female</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
                 <select>
             </div>
 
