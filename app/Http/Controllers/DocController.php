@@ -60,8 +60,9 @@ class DocController extends Controller
         return redirect()->route('Doc.index');
     }
 
-    public function download(Request $request, $file)
+    public function download($file)
     {
+        dd($file,public_path('doc/'.$file ));
         return response()->download(public_path('doc/'.$file));
     }
 

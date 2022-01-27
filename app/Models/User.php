@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Profile;
+use App\Notifications\WEllcomUser;
 
 class User extends Authenticatable
 {
@@ -47,6 +48,9 @@ class User extends Authenticatable
         static::created(function ($user){
 
             $profile = Profile::create(['user_id' => $user->id]);
+
+
+            $user->notify(new WEllcomUser('user->id' => $user->id));
         });
     }
 

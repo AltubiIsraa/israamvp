@@ -30,11 +30,11 @@ Route::get('/doc/delete/{id}', [\App\Http\Controllers\DocController::class,'dele
 Route::post('/doc/destroy/{id}', [\App\Http\Controllers\DocController::class,'destroy'])->name('Doc.destroy')->Middleware('auth');
 Route::get('/doc/edit/{id}', [\App\Http\Controllers\DocController::class,'edit'])->name('Doc.edit')->Middleware('auth');
 Route::post('/doc/update/{id}', [\App\Http\Controllers\DocController::class,'update'])->name('Doc.update')->Middleware('auth');
-Route::get('/download/{file}',[DocController::class,'download'])->Middleware('auth');
+Route::get('/download/{file}',[DocController::class,'download'])->middleware('auth');
 Route::get('/view/{id}',[DocController::class,'view'])->Middleware('auth');
 
 Route::get('/dashboard/profile',App\Http\Controllers\ProfileController::class)->name('profile');
-
+//mi
 
 
 Route::get('/dashboard', function () {
