@@ -49,8 +49,6 @@ class User extends Authenticatable
 
             $profile = Profile::create(['user_id' => $user->id]);
 
-
-            $user->notify(new WEllcomUser('user->id' => $user->id));
         });
     }
 
