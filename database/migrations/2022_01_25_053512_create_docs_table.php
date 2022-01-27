@@ -21,6 +21,7 @@ class CreateDocsTable extends Migration
             $table->string('grade')->nullable();
             $table->string('title')->nullable();
             $table->string('Desc')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

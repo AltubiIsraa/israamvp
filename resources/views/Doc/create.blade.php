@@ -1,6 +1,6 @@
 
 
-<form action="/dashboard/store" method="POST"></br>
+<form action="/dashboard/store" method="POST" enctype="multipart/form-data"></br>
 @csrf
 <h1>upload your document</h1></br>
 <div>
@@ -35,9 +35,16 @@
   <label for="title">title:</label><br>
   <input type="text" id="title" name="title"><br>
   <label for="title">Description:</label><br>
-  <textarea rows="4" cols="50" name="Desc"></textarea></br>
+  <textarea rows="4" cols="50" name="Desc"></textarea></br><br>
   <div class="form-group">
+
+<input type="file" name="file"><br><br>
+
+
+
 <input type="submit" value="Submit">
+
+
 
 </form>
 

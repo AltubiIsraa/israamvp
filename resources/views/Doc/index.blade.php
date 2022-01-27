@@ -17,6 +17,8 @@
         <th>Description</th>
         <th>subject</th>
         <th>grade</th>
+        <th>view</th>
+        <th>download</th>
 
         </tr>
 
@@ -27,6 +29,8 @@
         <td>{{$doc->Desc}}</td>
         <td>{{$doc->subject}}</td>
         <td>{{$doc->grade}}</td>
+        <td><a href="{{url('/view',$doc->id)}}">view</a></td>
+        <td><a href="{{url('/dowload',$doc->file)}}">download</a></td>
         <td>
         <a href="/doc/delete/{{$doc->id}}">delete</a></br>
         <a href="/doc/show/{{$doc->id}}"><button type="submit" >show</button></a>

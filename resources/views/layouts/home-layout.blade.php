@@ -45,8 +45,10 @@
 
 
 <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('bg.svg');">
+
 	<!--Nav-->
 	<div class="w-full container mx-auto p-6">
+
 			
 		<div class="w-full flex items-center justify-between">
 

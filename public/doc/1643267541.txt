@@ -1,0 +1,39 @@
+http://databoat-system.com/ (185.64.25.189)
+Vuln
+plesklin exploit
+CVE-ID：
+    CVE-2021-41773、CVE-2021-42013 ))
+
+CVE-((ID：
+    CVE-2019-0211 
+    https://search.censys.io/certificates/33bf90567bda11ef1179d74ca0e95af44bb18c2ecb0464ee24297f5e28d2f8b8))
+    
+can regester with fake email (weak Reg page with no authntication exchange/ there is no captcha/ there is no lock mechanism)<test10101293@gmail.com>
+
+error in (http://databoat-system.com/dashboard/u/my_companie) <ErrorException
+Trying to get property 'name' of non-object (View: /var/www/vhosts/l770.odp-cloud.com/databoat-system.com/resources/views/admin/companie.blade.php)
+>
+
+not all of the needable information have been asked the user in the reg page.
+
+((Environment information
+
+Laravel version
+    7.30.4
+Laravel locale
+    ar
+Laravel config cached
+    false
+PHP version
+    7.2.31))
+    
+    ((XSRF-TOKEN=eyJpdiI6Ii9KSFJPZXZ4UEpLVkFKLzc3cG9xRlE9PSIsInZhbHVlIjoiNCtheG82M2pZYzZPWHBZNHNwTXZpSTlGR2NqaWo5bkxVSHJ4NjFFSk8yQkEwMnNxS1pDZU1wb05rNm5aS2Jnd3VUMy96dmhSTWZ0R3dQRU9nem1ieXVRclQ4MU42dEtxc0lSSHQ3OFZ6dm1vZkJ5WFgwOTlGbFhlajZWdlFDUVEiLCJtYWMiOiI1YWI4ZWE3NzEyNDcwZmIxMjJlOTQ3ZDI1ZTQwZGM5OGVmOGJkYWEzMDUwMjg0NjZiODU3ZTI4NTIwY2E3NjczIn0%3D; laravel_session=eyJpdiI6IjdqMDgycWhRQ2VPdTJSamxZVkEvd1E9PSIsInZhbHVlIjoiVE41WE5nbDVob0hqeTJXRmFvZVRXT1BHWTJCZzF4OWREQm1OUzFTN3luLzYwTmZkeHZJaDBjZ1c0RlJ0UlpOckFBMkNTMkorbzJkaFAyWHFDZlcySURQMUs0Q25zbk9EcHVpYTk0TlhUWWlzM1JZK2JTOHp2TnRmNm5SNXVTTWEiLCJtYWMiOiJlZWFjMGRmODIxYzJmZjRiYTkwMzI2NmYxODE0ODVjYjk2MGQzNzc3MGVlOTQ2Y2IwZGVmYzU2MjgxNzc4Mjc2In0%3D))
+    
+    ((accept
+    text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8))
+    CVV Number not encrypted
+    
+    there is no validation + no password policy
+
+the web design not in a good way.
+

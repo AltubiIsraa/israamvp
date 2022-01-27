@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doc;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
@@ -48,11 +49,28 @@ class DocController extends Controller
         $doc->grade=$request->input('grade');
         $doc->title=$request->input('title');
         $doc->Desc=$request->input('Desc');
+
+        $file=$request->file;
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('doc', $filename);
+        $doc->file=$filename;
+
         $doc->save();
 
         return redirect()->route('Doc.index');
     }
 
+    public function download(Request $request, $file)
+    {
+        return response()->download(public_path('doc/'.$file));
+    }
+
+    public function view($id)
+    {
+        $doc=Doc::find($id);
+        return view('Doc.view', compact('doc'));
+    }
+    
     /**
      * Display the specified resource.
      *
@@ -93,6 +111,10 @@ class DocController extends Controller
         $doc->grade=$request->input('grade');
         $doc->title=$request->input('title');
         $doc->Desc=$request->input('Desc');
+        $file=$request->file;
+        $filename=time().'.'.$file->getClientOriginalExtension();
+        $request->file->move('doc', $filename);
+        $doc->file=$filename;
         $doc->save();
         $doc->update();
         return redirect()->route('Doc.index');
