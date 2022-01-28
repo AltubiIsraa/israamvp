@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
             'gender' => $request->gender,
         ]);
 
-
+        $user->notify( new WelcomeUser() );
         
 
         event(new Registered($user));
