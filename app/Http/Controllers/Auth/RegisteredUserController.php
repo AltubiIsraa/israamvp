@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Models\User;
 use App\Notifications\WelcomeUser;
+use App\Notifications\WEllcomUser;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'gender' => $request->gender,
         ]);
-
+$user->notify(new WEllcomUser());
         $user->notify( new WelcomeUser() );
         
 
